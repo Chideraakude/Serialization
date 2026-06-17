@@ -40,6 +40,7 @@ class JsonConverterTest {
     void testCanDeserializeJsonFile(){
         String jsonFilePath = "/home/semi/Desktop/Transaction";
         Path path = Paths.get(jsonFilePath, "test.json");
+        System.out.println(path.toAbsolutePath());
         List<Transaction> transactions = JsonConverter.deserialize(path);
         assertNotNull(transactions);
         assertEquals(3, transactions.size());
